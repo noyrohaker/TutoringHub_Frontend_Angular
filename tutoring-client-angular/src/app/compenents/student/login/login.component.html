@@ -1,26 +1,28 @@
+<mat-card>
+  <mat-card-title>Signin</mat-card-title>
+  <mat-card-content>
 <div class="displayTable">
     <div class="displayTableCell">
   
       <div class="authBlock">
-        <h3>Signin</h3>
-        <div class="formGroup">
-          <input type="text" class="form-control" placeholder="Username" #userName required>
-        </div>
+          <mat-form-field>
+            <input type="text" matInput placeholder="User email" formControlName="userName" #userName required>
+          </mat-form-field>
   
-        <div class="formGroup">
-          <input type="password" class="form-control" placeholder="Password" #userPassword required>
-        </div>
+          <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password" #userPassword required>
+          </mat-form-field>
   
-        <div class="formGroup">
-          <input type="button" class="btn btn-primary btn-block" value="Sign in"
-            (click)="AuthService.SignIn(userName.value, userPassword.value)">
-        </div>
-  
-        <div class="formGroup">
-          <button type="button" class="btn btn-danger btn-block" (click)="AuthService.GoogleAuth()">
+
+          <div class="button">
+            <button (click)="AuthService.SignIn(userName.value, userPassword.value)" type="submit" mat-button>Login</button>
+          </div>
+        
+          <div class="button">
+          <button type="button" type="submit" mat-button (click)="AuthService.GoogleAuth()">
             Log in with Google
           </button>
-        </div>
+          </div>
   
         <div class="forgotPassword">
           <span routerLink="/forgot-password">Forgot Password?</span>
@@ -32,4 +34,35 @@
       </div>
   
     </div>
+  </div> 
+</mat-card-content>
+</mat-card>
+
+<!-- 
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Login</button>
   </div>
+
+</form>
+</mat-card-content>
+</mat-card> -->

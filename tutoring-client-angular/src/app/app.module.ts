@@ -11,6 +11,16 @@ import { ForgotPasswordComponent } from './compenents/student/forgot-password/fo
 import { VerifyEmailComponent } from './compenents/student/verify-email/verify-email.component';
 import { AuthService } from './compenents/auth/auth.service';
 import { DashboardComponent } from './compenents/dashboard/dashboard.component';
+import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {
+  MatInputModule,
+  MatFormFieldModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 var firebaseConfig = {
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -36,7 +46,14 @@ var firebaseConfig = {
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatCardModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

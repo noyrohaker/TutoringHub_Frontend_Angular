@@ -24,5 +24,18 @@
 
   .button {
     display: flex;
+    margin-top: 10px;
     justify-content: center;
+  }
+
+  button[type=button]{
+    cursor: pointer;
+  }
+
+  .redirect{
+    cursor: pointer;
+  }
+
+  .forgotPass{
+    cursor: pointer;
   }

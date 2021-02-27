@@ -15,11 +15,15 @@ import { MatCardModule } from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {
   MatInputModule,
-  MatFormFieldModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AboutComponent } from './compenents/about/about.component';
 
 
 var firebaseConfig = {
@@ -40,7 +44,9 @@ var firebaseConfig = {
     RegisterComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    DashboardComponent
+    DashboardComponent,
+    ToolbarComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,9 @@ var firebaseConfig = {
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    MatIconModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule 
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

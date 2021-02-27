@@ -1,0 +1,62 @@
+<mat-card>
+  <mat-card-title>Register User</mat-card-title>
+  <mat-card-content>
+    <div class="displayTable">
+      <div class="authBlock">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Email Address"
+            formControlName="userEmail"
+            #userEmail
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+            #userPwd
+            required
+          />
+        </mat-form-field>
+
+        <div class="button">
+          <button
+            (click)="AuthService.SignUp(userEmail.value, userPwd.value)"
+            type="submit"
+            mat-button
+            mat-raised-button
+            color="accent"
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <div class="button">
+          <button
+            type="button"
+            type="submit"
+            mat-button
+            (click)="AuthService.GoogleAuth()"
+            mat-raised-button
+            color="accent"
+          >
+            Log in with Google
+          </button>
+        </div>
+
+        <div class="redirectToLogin">
+          <span
+            >Already have an account?
+            <span class="redirect" routerLink="/sign-in">Log In</span></span
+          >
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

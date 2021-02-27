@@ -5,29 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
-import { LoginComponent } from './compenents/student/login/login.component';
-import { RegisterComponent } from './compenents/student/register/register.component';
-import { ForgotPasswordComponent } from './compenents/student/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './compenents/student/verify-email/verify-email.component';
-import { AuthService } from './compenents/auth/auth.service';
+import { LoginComponent } from './compenents/authentication/login/login.component';
+import { RegisterComponent } from './compenents/authentication/register/register.component';
+import { ForgotPasswordComponent } from './compenents/authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './compenents/authentication/verify-email/verify-email.component';
+import { AuthService } from './services/auth/auth.service';
 import { DashboardComponent } from './compenents/dashboard/dashboard.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {
-  MatInputModule,
-} from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarComponent } from './compenents/toolbar/toolbar.component';
 import { AboutComponent } from './compenents/about/about.component';
+import { MyProfileComponent } from './compenents/user-personal-space/my-profile/my-profile.component';
+import { UserClassesComponent } from './compenents/user-personal-space/user-classes/user-classes.component';
+import { UserDetailsComponent } from './compenents/user-personal-space/user-details/user-details.component';
 
 
 var firebaseConfig = {
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   apiKey: "AIzaSyDDlRk5x870JNEz7KQzVk3xPfan-MlK64I",
   authDomain: "tutoringhub-e7362.firebaseapp.com",
   projectId: "tutoringhub-e7362",
@@ -47,6 +48,9 @@ var firebaseConfig = {
     DashboardComponent,
     ToolbarComponent,
     AboutComponent,
+    MyProfileComponent,
+    UserDetailsComponent,
+    UserClassesComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ var firebaseConfig = {
     MatFormFieldModule,
     MatIconModule,
     BrowserAnimationsModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    MatTabsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

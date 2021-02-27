@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from  './compenents/student/login/login.component';
-import { RegisterComponent } from  './compenents/student/register/register.component';
-import { ForgotPasswordComponent } from  './compenents/student/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from  './compenents/student/verify-email/verify-email.component';
+import { LoginComponent } from  './compenents/authentication/login/login.component';
+import { RegisterComponent } from  './compenents/authentication/register/register.component';
+import { ForgotPasswordComponent } from  './compenents/authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from  './compenents/authentication/verify-email/verify-email.component';
 import { AuthGuard } from "./auth.guard";
 import { DashboardComponent } from './compenents/dashboard/dashboard.component';
 import { AboutComponent } from './compenents/about/about.component';
+import { MyProfileComponent } from './compenents/user-personal-space/my-profile/my-profile.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'email-verification', component: VerifyEmailComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'my-profile', component: MyProfileComponent, canActivate: [AuthGuard] },
 
 ];
 

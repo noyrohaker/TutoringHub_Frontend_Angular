@@ -1,1 +1,237 @@
-<a>need to add here search bar and data!</a>
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="container">
+    <form style="margin-top: 5%">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <input
+            id="teacherName"
+            type="text"
+            class="form-control"
+            id="searchTeacherName"
+            placeholder="Teacher Name"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <input
+            id="city"
+            type="text"
+            class="form-control"
+            id="searchCity"
+            placeholder="City"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <input
+            id="classType"
+            type="text"
+            class="form-control"
+            id="searchClassType"
+            placeholder="Class Type"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <input
+            id="ageRange"
+            type="text"
+            class="form-control"
+            id="searchAgeRange"
+            placeholder="Age Range"
+          />
+        </div>
+      </div>
+    </form>
+
+    <div class="list-group w-50">
+      <a
+        href="#"
+        class="list-group-item list-group-item-action flex-column align-items-start"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <div class="form-row">
+            <div class="form-group">
+              <p class="mb-1">Noy Rohaker</p>
+            </div>
+            <div class="form-group" style="margin-left: 20px">
+              <p class="mb-1">City: Kiryat-Ono</p>
+            </div>
+          </div>
+          <small
+            ><button type="button" class="btn btn-secondary btn-sm">
+              Add to my classes
+            </button></small
+          >
+        </div>
+      </a>
+      <a
+        href="#"
+        class="list-group-item list-group-item-action flex-column align-items-start"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <div class="form-row">
+            <div class="form-group">
+              <p class="mb-1">Gal Blond</p>
+            </div>
+            <div class="form-group" style="margin-left: 20px">
+              <p class="mb-1">City: Tel Aviv</p>
+            </div>
+          </div>
+          <small
+            ><button type="button" class="btn btn-secondary btn-sm">
+              Add to my classes
+            </button></small
+          >
+        </div>
+      </a>
+      <a
+        href="#"
+        class="list-group-item list-group-item-action flex-column align-items-start"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <div class="form-row">
+            <div class="form-group">
+              <p class="mb-1">Adi Hahamov</p>
+            </div>
+            <div class="form-group" style="margin-left: 20px">
+              <p class="mb-1">City: Holon</p>
+            </div>
+          </div>
+          <small
+            ><button type="button" class="btn btn-secondary btn-sm">
+              Add to my classes
+            </button></small
+          >
+        </div>
+      </a>
+    </div>
+  </body>
+</html> -->
+<!-- <html>
+  <div class="content" role="main">
+    <div class="card">
+      <div class="form-group">
+        <label for="search-text">Search Text</label>
+        <input
+          id="search-text"
+          aria-describedby="search-text"
+          [(ngModel)]="searchText"
+          type="email"
+          class="form-control"
+          id="search-text"
+          placeholder="Enter text to search"
+          autofocus
+        />
+      </div>
+      <ul class="list-group list-group-flush">
+        <li
+          class="list-group-item"
+          *ngFor="let c of characters | appFilter: searchText"
+          appHighlight
+          [searchedWord]="searchText"
+          [content]="c"
+          [classToApply]="'font-weight-bold'"
+          [setTitle]="'true'"
+        >
+          {{ c }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="container">
+    <form style="margin-top: 5%">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <input
+            id="teacherName"
+            type="text"
+            id="search-text"
+            aria-describedby="search-text"
+            [(ngModel)]="searchText"
+            class="form-control"
+            id="searchTeacherName"
+            placeholder="Teacher Name"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <input
+            id="city"
+            type="text"
+            class="form-control"
+            id="searchCity"
+            placeholder="City"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <input
+            id="classType"
+            type="text"
+            class="form-control"
+            id="searchClassType"
+            placeholder="Class Type"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <input
+            id="ageRange"
+            type="text"
+            class="form-control"
+            id="searchAgeRange"
+            placeholder="Age Range"
+          />
+        </div>
+      </div>
+    </form>
+
+    <div class="list-group w-50" style="overflow: scroll">
+      <div class="justify-content-between">
+        <li
+          id="list"
+          class="list-group-item"
+          *ngFor="let teacher of teachersArray | appFilter: searchText"
+        >
+          <div>
+            <p>
+              {{ teacher.teacherName }}
+            </p>
+            <p>
+              {{ teacher.city }}
+            </p>
+            <p>
+              {{ teacher.classType }}
+            </p>
+            <p>
+              {{ teacher.ageRange }}
+            </p>
+          </div>
+          <small
+            ><button type="button" class="btn btn-secondary btn-sm">
+              Add to my classes
+            </button></small
+          >
+        </li>
+      </div>
+    </div>
+  </body>
+</html>

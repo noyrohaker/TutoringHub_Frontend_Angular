@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FilterPipe } from './compenents/dashboard/filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './compenents/authentication/login/login.component';
 import { RegisterComponent } from './compenents/authentication/register/register.component';
 import { ForgotPasswordComponent } from './compenents/authentication/forgot-password/forgot-password.component';
@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,21 +28,20 @@ import { MyProfileComponent } from './compenents/user-personal-space/my-profile/
 import { UserClassesComponent } from './compenents/user-personal-space/user-classes/user-classes.component';
 import { UserDetailsComponent } from './compenents/user-personal-space/user-details/user-details.component';
 
-
 var firebaseConfig = {
-  apiKey: "AIzaSyDDlRk5x870JNEz7KQzVk3xPfan-MlK64I",
-  authDomain: "tutoringhub-e7362.firebaseapp.com",
-  projectId: "tutoringhub-e7362",
-  storageBucket: "tutoringhub-e7362.appspot.com",
-  messagingSenderId: "180245525929",
-  appId: "1:180245525929:web:e85c5035cb68cca7d500b8",
-  measurementId: "G-7D6ZGTFVTY"
-
+  apiKey: 'AIzaSyDDlRk5x870JNEz7KQzVk3xPfan-MlK64I',
+  authDomain: 'tutoringhub-e7362.firebaseapp.com',
+  projectId: 'tutoringhub-e7362',
+  storageBucket: 'tutoringhub-e7362.appspot.com',
+  messagingSenderId: '180245525929',
+  appId: '1:180245525929:web:e85c5035cb68cca7d500b8',
+  measurementId: 'G-7D6ZGTFVTY',
 };
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    FilterPipe,
     RegisterComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
@@ -62,13 +62,14 @@ var firebaseConfig = {
     MatDialogModule,
     MatButtonModule,
     MatToolbarModule,
+    FormsModule,
     MatFormFieldModule,
     MatIconModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

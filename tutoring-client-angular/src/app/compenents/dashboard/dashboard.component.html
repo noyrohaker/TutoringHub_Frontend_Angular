@@ -159,57 +159,56 @@
   </head>
   <body class="container">
     <form style="margin-top: 5%">
-      <div class="form-row">
+      <div class="form-row" style="justify-content: center">
         <div class="form-group col-md-4">
           <input
-            id="teacherName"
+            id="searchTeacherName"
             type="text"
-            id="search-text"
             aria-describedby="search-text"
             [(ngModel)]="searchText"
             class="form-control"
-            id="searchTeacherName"
+            (input)="onSearchChange($event.target.value, $event.target.id)"
             placeholder="Teacher Name"
           />
         </div>
         <div class="form-group col-md-4">
           <input
-            id="city"
+            id="searchCity"
             type="text"
             class="form-control"
-            id="searchCity"
             placeholder="City"
+            (input)="onSearchChange($event.target.value, $event.target.id)"
           />
         </div>
       </div>
-      <div class="form-row">
+      <div class="form-row" style="justify-content: center">
         <div class="form-group col-md-4">
           <input
-            id="classType"
+            id="searchClassType"
             type="text"
             class="form-control"
-            id="searchClassType"
             placeholder="Class Type"
+            (input)="onSearchChange($event.target.value, $event.target.id)"
           />
         </div>
         <div class="form-group col-md-4">
           <input
-            id="ageRange"
+            id="searchAgeRange"
             type="text"
             class="form-control"
-            id="searchAgeRange"
             placeholder="Age Range"
+            (input)="onSearchChange($event.target.value, $event.target.id)"
           />
         </div>
       </div>
     </form>
 
-    <div class="list-group w-50" style="overflow: scroll">
+    <div class="list-group w-50" style="margin: auto">
       <div class="justify-content-between">
         <li
           id="list"
           class="list-group-item"
-          *ngFor="let teacher of teachersArray | appFilter: searchText"
+          *ngFor="let teacher of teachersFilteredArray"
         >
           <div>
             <p>

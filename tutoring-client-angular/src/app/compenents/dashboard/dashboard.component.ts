@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { AppModule } from 'src/app/app.module';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DockOutlined } from '@material-ui/icons';
 
 @Component({
   selector: 'app-dashboard',
@@ -39,4 +40,31 @@ export class DashboardComponent {
       ageRange: '17-20',
     },
   ];
+  teachersFilteredArray = this.teachersArray;
+
+  onSearchChange(searchValue: string, id: string): void {
+    if (!searchValue) {
+      this.teachersFilteredArray = this.teachersArray;
+    }
+
+    searchValue = searchValue.toLowerCase();
+
+    if (id == 'searchTeacherName') {
+      this.teachersFilteredArray = this.teachersArray.filter((it) => {
+        return it.teacherName.toLowerCase().includes(searchValue);
+      });
+    } else if (id == 'searchCity') {
+      this.teachersFilteredArray = this.teachersArray.filter((it) => {
+        return it.city.toLowerCase().includes(searchValue);
+      });
+    } else if (id == 'searchClassType') {
+      this.teachersFilteredArray = this.teachersArray.filter((it) => {
+        return it.classType.toLowerCase().includes(searchValue);
+      });
+    } else {
+      this.teachersFilteredArray = this.teachersArray.filter((it) => {
+        return it.ageRange.toLowerCase().includes(searchValue);
+      });
+    }
+  }
 }
